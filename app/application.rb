@@ -18,9 +18,7 @@ class Application
       resp.write "Path Not Found"
     end
 
-    resp.finish
-  end
-elsif req.path.match(/cart/)
+    elsif req.path.match(/cart/)
       if @@cart.empty?
         resp.write "Your cart is empty"
       else
@@ -39,7 +37,7 @@ elsif req.path.match(/cart/)
     else
       resp.write "Path Not Found"
     end
-
+     resp.finish
 
   def handle_search(search_term)
     if @@items.include?(search_term)
